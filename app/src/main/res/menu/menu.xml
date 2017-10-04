@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+    android:id="@+id/item_1"
+    android:title="form"
+    app:showAsAction="never"
+    />
+
+    <item
+    android:id="@+id/item_2"
+    android:title="list"
+    app:showAsAction="never"
+    />
+
+    <item
+    android:id="@+id/item_3"
+    android:title="3 fragment"
+    app:showAsAction="never"
+    />
+
+</menu>
