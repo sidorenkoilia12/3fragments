@@ -14,9 +14,9 @@ import android.widget.Toast;
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "ContactDB";
-    public static final String TABLE_NAME = "ContactTable";
-    public static final String KEY_ID = "id";
+    public static final String DATABASE_NAME = "ContactDB1";
+    public static final String TABLE_NAME = "ContactTable1";
+    public static final String KEY_ID = "_id";
     public static final String KEY_NAME = "name";
     public static final String KEY_SURNAME = "surname";
     public static final String KEY_EMAIL = "email";
@@ -47,6 +47,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         DBHelper = new DBHelper(ctx);
         db = DBHelper.getWritableDatabase();
+        //db = DBHelper.getReadableDatabase();
     }
 
     public void close(){
@@ -62,6 +63,12 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.query(TABLE_NAME, null, null, null, null, null, null);
     }
 
+    public Cursor getOneRec(long id){
+
+        String[] selectionArgs = new String[] {String.valueOf(id)};
+        return db.query(TABLE_NAME, null, KEY_ID + " = ?", selectionArgs, null, null, null);
+    }
+
     public boolean addItem(String name, String surname, String email, String telephone){
 
         ContentValues contentValues = new ContentValues();
@@ -73,6 +80,23 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put(KEY_TELEPHONE, telephone);
 
         if(db.insert(TABLE_NAME, null, contentValues) > 0){
+
+            succ = true;
+        }
+        return succ;
+    }
+
+    public boolean updateItem(long id, String name, String surname, String email, String telephone){
+
+        ContentValues contentValues = new ContentValues();
+        boolean succ = false;
+
+        contentValues.put(KEY_NAME, name);
+        contentValues.put(KEY_SURNAME, surname);
+        contentValues.put(KEY_EMAIL, email);
+        contentValues.put(KEY_TELEPHONE, telephone);
+
+        if(db.update(TABLE_NAME, contentValues, KEY_ID + " = " + id, null) > 0){
 
             succ = true;
         }

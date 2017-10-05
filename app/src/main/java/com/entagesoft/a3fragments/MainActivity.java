@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Fragment fragment_2;
     Fragment fragment_3;
     FragmentTransaction fragmentTransaction;
+    public static long EDIT_REC_ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
