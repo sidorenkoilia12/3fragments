@@ -21,7 +21,7 @@
                     android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Name"
+                    android:hint="@string/hint_name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse" />
 
             </android.support.design.widget.TextInputLayout>
@@ -34,7 +34,7 @@
                     android:id="@+id/surname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Surname" />
+                    android:hint="@string/hint_surname" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -46,7 +46,7 @@
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Email"
+                    android:hint="@string/hint_email"
                     android:inputType="textEmailAddress" />
 
             </android.support.design.widget.TextInputLayout>
@@ -59,7 +59,7 @@
                     android:id="@+id/telephone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Telephone number"
+                    android:hint="@string/hint_telephone"
                     android:inputType="phone" />
 
             </android.support.design.widget.TextInputLayout>
@@ -70,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="save"
+                android:text="@string/save_button_title"
                 android:textStyle="bold" />
 
         </LinearLayout>

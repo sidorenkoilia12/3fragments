@@ -69,6 +69,26 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.query(TABLE_NAME, null, KEY_ID + " = ?", selectionArgs, null, null, null);
     }
 
+    public String getTelephone(long id){
+
+        String[] selectionArgs = new String[] {String.valueOf(id)};
+        Cursor cursor = db.query(TABLE_NAME, null, KEY_ID + " = ?", selectionArgs, null, null, null);
+
+        cursor.moveToFirst();
+
+        return cursor.getString(cursor.getColumnIndex(DBHelper.KEY_TELEPHONE));
+    }
+
+    public String getEmail(long id){
+
+        String[] selectionArgs = new String[] {String.valueOf(id)};
+        Cursor cursor = db.query(TABLE_NAME, null, KEY_ID + " = ?", selectionArgs, null, null, null);
+
+        cursor.moveToFirst();
+
+        return cursor.getString(cursor.getColumnIndex(DBHelper.KEY_EMAIL));
+    }
+
     public boolean addItem(String name, String surname, String email, String telephone){
 
         ContentValues contentValues = new ContentValues();

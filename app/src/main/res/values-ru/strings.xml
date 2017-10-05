@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">3 фрагмента</string>
+    <string name="list_item_menu">Список</string>
+    <string name="fragment3_item_menu">GitHub</string>
+    <string name="form_item_menu">Форма</string>
+    <string name="hint_telephone">Номер телефона</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_surname">Фамилия</string>
+    <string name="hint_name">Имя</string>
+    <string name="save_button_title">сохранить</string>
+    <string name="toast_success">Успешно сохранено</string>
+    <string name="toast_error">Не сохранено</string>
+    <string name="menu_delete">удалить</string>
+    <string name="menu_edit">редактировать</string>
+    <string name="menu_mail">написать email</string>
+    <string name="menu_call">позвонить</string>
+    <string name="last_edit_user">Последний пользователь:</string>
+
+</resources>

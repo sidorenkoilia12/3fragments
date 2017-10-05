@@ -2,10 +2,15 @@ package com.entagesoft.a3fragments;
 
 
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +26,7 @@ public class Fragment1 extends Fragment {
     Button saveButton;
     DBHelper DBHelper;
     Cursor cursor;
+    SharedPreferences sharedPreferences;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,6 +65,14 @@ public class Fragment1 extends Fragment {
                 String email = emailEditText.getText().toString();
                 String telephone = telephoneEditText.getText().toString();
 
+                sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+                Editor editor = sharedPreferences.edit();
+                editor.putString("name", name);
+                editor.putString("surname", surname);
+                editor.putString("email", email);
+                editor.putString("telephone", telephone);
+                editor.commit();
+
                 boolean succ = false;
                 DBHelper = new DBHelper(getActivity());
                 DBHelper.open();
@@ -74,11 +88,11 @@ public class Fragment1 extends Fragment {
                 }
                 if(succ) {
 
-                    Toast.makeText(getActivity(), "Successfully saved", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), R.string.toast_success, Toast.LENGTH_LONG).show();
                 }
                 else{
 
-                    Toast.makeText(getActivity(), "Not saved", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), R.string.toast_error, Toast.LENGTH_LONG).show();
                 }
 
                 MainActivity.EDIT_REC_ID = 0;
@@ -94,5 +108,68 @@ public class Fragment1 extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        Log.d("MY_TAG", "onAttach");
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Log.d("MY_TAG", "onCreate");
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        Log.d("MY_TAG", "onStart");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        Log.d("MY_TAG", "onResume");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        Log.d("MY_TAG", "onPause");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        Log.d("MY_TAG", "onStop");
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+
+        Log.d("MY_TAG", "onDestroyView");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        Log.d("MY_TAG", "onDestroy");
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+
+        Log.d("MY_TAG", "onDetach");
     }
 }
