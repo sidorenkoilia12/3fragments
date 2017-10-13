@@ -3,6 +3,7 @@ package com.entagesoft.a3fragments;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
@@ -114,62 +115,62 @@ public class Fragment1 extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        Log.d("MY_TAG", "onAttach");
+        getActivity().startService(new Intent(getActivity(), LogService.class).putExtra("string", " Fragment 1 onAttach"));
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Log.d("MY_TAG", "onCreate");
+        getActivity().startService(new Intent(getActivity(), LogService.class).putExtra("string", " Fragment 1 onCreate"));
     }
 
     @Override
     public void onStart() {
         super.onStart();
 
-        Log.d("MY_TAG", "onStart");
+        getActivity().startService(new Intent(getActivity(), LogService.class).putExtra("string", " Fragment 1 onStart"));
     }
 
     @Override
     public void onResume() {
         super.onResume();
 
-        Log.d("MY_TAG", "onResume");
+        getActivity().startService(new Intent(getActivity(), LogService.class).putExtra("string", " Fragment 1 onResume"));
     }
 
     @Override
     public void onPause() {
         super.onPause();
 
-        Log.d("MY_TAG", "onPause");
+        getActivity().startService(new Intent(getActivity(), LogService.class).putExtra("string", " Fragment 1 onPause"));
     }
 
     @Override
     public void onStop() {
         super.onStop();
 
-        Log.d("MY_TAG", "onStop");
+        getActivity().startService(new Intent(getActivity(), LogService.class).putExtra("string", " Fragment 1 onStop"));
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
 
-        Log.d("MY_TAG", "onDestroyView");
+        getActivity().startService(new Intent(getActivity(), LogService.class).putExtra("string", " Fragment 1 onDestroyView"));
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
 
-        Log.d("MY_TAG", "onDestroy");
+        getActivity().startService(new Intent(getActivity(), LogService.class).putExtra("string", " Fragment 1 onDestroy"));
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
 
-        Log.d("MY_TAG", "onDetach");
+        getActivity().startService(new Intent(getActivity(), LogService.class).putExtra("string", " Fragment 1 onDetach"));
     }
 }
