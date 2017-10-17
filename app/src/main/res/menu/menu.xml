@@ -16,8 +16,20 @@
 
     <item
     android:id="@+id/item_3"
-    android:title="@string/fragment3_item_menu"
+    android:title="@string/facebook_item_menu"
     app:showAsAction="never"
     />
+
+    <item
+        android:id="@+id/item_4"
+        android:title="@string/github_item_menu"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/item_5"
+        android:title="@string/settings_item_menu"
+        app:showAsAction="never"
+        />
 
 </menu>

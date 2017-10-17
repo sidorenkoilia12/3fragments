@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">3 фрагмента</string>
+
+    <string name="facebook_app_id">1924817647779365</string>
+    <string name="fb_login_protocol_scheme">fb1924817647779365</string>
+
     <string name="list_item_menu">Список</string>
-    <string name="fragment3_item_menu">GitHub</string>
+    <string name="facebook_item_menu">Facebook</string>
+    <string name="github_item_menu">GitHub</string>
+    <string name="settings_item_menu">Настройки</string>
     <string name="form_item_menu">Форма</string>
     <string name="hint_telephone">Номер телефона</string>
     <string name="hint_email">Email</string>

@@ -3,19 +3,29 @@ package com.entagesoft.a3fragments;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import static android.app.FragmentTransaction.TRANSIT_FRAGMENT_OPEN;
+import static com.entagesoft.a3fragments.R.layout.fragment_5;
 
 public class MainActivity extends AppCompatActivity {
 
     Fragment fragment_1;
     Fragment fragment_2;
     Fragment fragment_3;
+    Fragment fragment_4;
+    Fragment fragment_5;
     FragmentTransaction fragmentTransaction;
     public static long EDIT_REC_ID;
 
@@ -29,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
         fragment_1 = new Fragment1();
         fragment_2 = new Fragment2();
         fragment_3 = new Fragment3();
+        fragment_4 = new Fragment4();
+        fragment_5 = new Fragment5();
 
-        //Log.d("TAG", "onCreate");
+
     }
 
     @Override
@@ -62,6 +74,18 @@ public class MainActivity extends AppCompatActivity {
 
                 //fragmentTransaction.add(R.id.fragment, fragment_3);
                 fragmentTransaction.replace(R.id.fragment, fragment_3);
+                break;
+
+            case R.id.item_4:
+
+                //fragmentTransaction.add(R.id.fragment, fragment_3);
+                fragmentTransaction.replace(R.id.fragment, fragment_4);
+                break;
+
+            case R.id.item_5:
+
+                //fragmentTransaction.add(R.id.fragment, fragment_3);
+                fragmentTransaction.replace(R.id.fragment, fragment_5);
                 break;
         }
 

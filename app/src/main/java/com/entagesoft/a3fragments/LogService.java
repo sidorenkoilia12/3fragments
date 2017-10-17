@@ -29,8 +29,8 @@ public class LogService extends Service {
 
         String string = intent.getStringExtra("string");
         boolean turnOff = false;
-        //turnOff = intent.getBooleanExtra("turnOff", false);
         runLogging run = new runLogging(string, turnOff, startId);
+        //run.run();
         executorService.execute(run);
 
         //Log.d("MY_TAG", "Servise onStartCommand");
@@ -60,11 +60,6 @@ public class LogService extends Service {
         public void run() {
 
             Log.d("MY_TAG", string);
-
-            //if(turnOff){
-
-                //stopSelf(startId);
-            //}
         }
     }
 

@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">3fragments</string>
 
+    <string name="facebook_app_id">1924817647779365</string>
+    <string name="fb_login_protocol_scheme">fb1924817647779365</string>
+
     <string name="title_activity_login">Sign in</string>
     <string name="list_item_menu">List</string>
-    <string name="fragment3_item_menu">GitHub</string>
+    <string name="facebook_item_menu">Facebook</string>
+    <string name="github_item_menu">GitHub</string>
+    <string name="settings_item_menu">Settings</string>
     <string name="form_item_menu">Form</string>
     <string name="hint_telephone">Telephone number</string>
     <string name="hint_email">Email</string>
@@ -17,4 +22,7 @@
     <string name="menu_mail">mail</string>
     <string name="menu_call">call</string>
     <string name="last_edit_user">Last user:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
